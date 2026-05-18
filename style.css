@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Apply it to your sections */
+section {
+  view-timeline-name: --section-reveal;
+  view-timeline-axis: block;
+  
+  /* Link the animation to the scroll timeline */
+  animation: revealOnScroll linear both;
+  animation-timeline: --section-reveal;
+  
+  /* Tweak these percentages to control exactly when the fade starts/ends */
+  animation-range: entry 10% cover 40%; 
+}
+
+/* GENERAL */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+ font-family: "Poppins", 'sans seriff';
+ color: #1e293b; /* Slate Dark for rich text readability */
+ background-color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: #475569; /* Soft tech-slate for paragraphs */
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9; 
+}
+
+/* Custom scrollbar thumb (the moving bar) */
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0284c7; /* Changes to accent color when hovered */
+}
+
+/* TRANSITION */
+a, .btn {
+  transition: all 300ms ease;
+}
+
+/* NAV */
+nav, .nav-links {
+  display: flex;
+}
+
+nav {
+  align-items: center;
+  justify-content: space-around;
+  height: 17vh;
+  border-bottom: 0.1rem solid #ebd0ce;
+  border-color: #e2e8f0;
+  background-color: #ffffff;
+}
+
+.nav-links {
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+a {
+  color: #1e293b;
+  text-decoration: none;
+  text-decoration-color: white;
+}
+
+a:hover {
+  color: #0284c7; /* Vibrant Electric Blue Accent */
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: #0284c7;
+}
+
+.logo {
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.logo img {
+  height: 5rem;
+  width: auto;
+}
+
+.logo:hover {
+  cursor: default;
+}
+
+/* HAMBURGER MENU */
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: #1e293b;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  width: fit-content;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+  border: 1px solid #e2e8f0;
+}
+
+/* SECTIONS */
+section {
+  padding-top: 4vh;
+  height: 96vh;
+  margin: 0 10rem;
+  box-sizing: border-box;
+  min-height: fit-content;
+}
+
+.section-container {
+  display: flex;
+}
+
+/* PROFILE */
+#profile {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 80vh;
+  background-color: #f1f5f9; /* Soft Cool Gray backdrop for hero entry */
+  margin: 0 0;
+}
+
+.section__pic-container {
+  display: flex;
+  height: 400px;
+  width: 400px;
+  margin: auto 0;
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  color: #0284c7;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  color: #1e293b;
+}
+
+#socials-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+/* ICONS */
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* BUTTONS */
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  padding: 1rem;
+  transition: all 300ms ease;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1, .btn-color-2 {
+  border: #1e293b 0.1rem solid;
+}
+
+.btn-color-1 {
+  background: #1e293b;
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+  cursor: pointer;
+}
+
+.btn-color-2 {
+  background: none;
+  color: #1e293b;
+}
+
+.btn-color-2:hover {
+  background: #1e293b;
+  color: white;
+  cursor: pointer;
+}
+
+/* ABOUT */
+#about {
+  position: relative;
+}
+
+.about-containers {
+  gap: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+
+.about-details-container {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.about-containers, .about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  border-radius: 2rem;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 1.5rem;
+  flex: 1;
+  background: #f8fafc; /* Subtle light gray card layout to offset clear white backgrounds */
+  border-radius: 2rem;
+  border: 0.1rem solid #e2e8f0;
+  text-align: center;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.text-container ul {
+  margin: 0 2rem;
+}
+
+/* PROJECTS */
+#projects {
+  position: relative;
+}
+
+.color-container {
+  border-color: #e2e8f0;
+  background: #f1f5f9; /* Breaks up the project section beautifully */
+}
+
+.project-img {
+  border-radius: 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.project-title {
+  margin: 1rem;
+  color: #1e293b;
+}
+
+.project-btn {
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+/* CONTACT */
+#contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70vh;
+}
+
+.contact-info-upper-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2rem;
+  border: 0.1rem solid #e2e8f0;
+  background: #f8fafc;
+  margin: 2rem auto;
+  padding: 0.5rem;
+}
+
+.contact-info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem;
+}
+
+.contact-info-container p {
+  font-size: larger;
+}
+
+.contact-info-container p a {
+  color: #1e293b;
+}
+
+.contact-info-container p a:hover {
+  color: #0284c7;
+}
+
+.contact-icon {
+  cursor: default;
+}
+
+/* FOOTER */
+footer {
+  height: 26vh;
+  margin: 0;
+  background-color: #f1f5f9;
+}
+
+footer nav {
+  border: none;
+  background-color: #f1f5f9;
+}

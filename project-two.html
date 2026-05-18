@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Two Details - Mark Brown</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaquieries.css">
+  <style>
+    /* Matching extensions to seamlessly fit your current layout core */
+    .project-detail-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .media-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 2rem;
+      border: 0.1rem solid rgb(163, 163, 163);
+    }
+    .video-wrapper iframe, .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .screenshot-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .screenshot-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      border: 0.1rem solid rgb(220, 220, 220);
+    }
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .badge {
+      background-color: #f8f9fa;
+      border: 0.1rem solid rgb(163, 163, 163);
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    .back-nav {
+      margin-top: 2rem;
+    }
+    @media screen and (max-width: 1200px) {
+      .media-layout {
+        grid-template-columns: 1fr;
+      }
+      section {
+        height: auto !important;
+        margin: 0 2rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="desktop-nav">
+    <div class="logo">
+      <img src="assets/logo.png" class="logo-image" alt="Logo">
+      <span class="logo-text">Mark Brown</span>
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <img src="assets/logo.png" class="logo-image">
+      <span class="logo-text">Mark Brown</span>
+    </div>
+    
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="menu-links">
+        <li><a href="index.html#about" onclick="toggleMenu()">about</a></li>
+        <li><a href="index.html#projects" onclick="toggleMenu()">projects</a></li>
+        <li><a href="index.html#contact" onclick="toggleMenu()">contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="project-two-details" style="height: auto; min-height: 85vh; padding-bottom: 8vh;">
+    <div class="back-nav">
+      <button class="btn btn-color-2" onclick="location.href='index.html#projects'">← Back</button>
+    </div>
+
+    <p class="section__text__p1" style="text-align: left; margin-top: 1.5rem;">Case Study</p>
+    <h1 class="title" style="text-align: left; margin-bottom: 2rem;">AI-Enhanced VR Job Interview Simulator</h1>
+    <p><b><i>*Note: This was a University Capstone Group Project</i></b></p>
+
+    <div class="project-detail-container">
+      
+      <div class="media-layout">
+        <div class="video-wrapper">
+          <video controls preload="metadata" poster="./assets/vr.png">
+            <source src="./assets/VR Demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="details-container" style="text-align: left;">
+          <h3>Project Overview</h3>
+          <p style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            This is a VR job interview simulator built in Unity for the Meta Quest 3, designed to help users bridge the gap between technical knowledge and real-world communication confidence.
+          </p>
+          <p style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            Users can select different job categories and difficulty levels, and the AI interviewer fluidly adapts its line of questioning based on those choices to keep the experience realistic and varied. It focuses VR interaction mechanics and analyses performance metrics—like vocal delivery and response context—to give users immediate, practical feedback during the session.
+          </p>
+          <p>
+            The project also features a dedicated analytics dashboard to track progress. It includes secure role management, providing admins a birds-eye view of all user interview metrics while restricting standard users to their own historical stats.
+          </p>
+        </div>
+      </div>
+
+      <div class="details-container color-container" style="text-align: left;">
+        <h3 style="margin: 0 0 0.5rem 0;">Tech Stack & Tools</h3>
+        <p>Built with scalability and fluid integration patterns:</p>
+        <div class="tech-badges">
+          <span class="badge">C#</span>
+          <span class="badge">Unity</span>
+          <span class="badge">VR</span>
+          <span class="badge">Firebase</span>
+          <span class="badge">Google Gemini API</span>
+          <span class="badge">Google Cloud Speech-to-Text API</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="index.html#about">about</a></li>
+          <li><a href="index.html#projects">projects</a></li>
+          <li><a href="index.html#contact">contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Two Details - Mark Brown</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediaquieries.css">
+  <style>
+    /* Matching extensions to seamlessly fit your current layout core */
+    .project-detail-container {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin-top: 2rem;
+    }
+    .media-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3rem;
+    }
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 2rem;
+      border: 0.1rem solid rgb(163, 163, 163);
+    }
+    .video-wrapper iframe, .video-wrapper video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .screenshot-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .screenshot-gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      border: 0.1rem solid rgb(220, 220, 220);
+    }
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .badge {
+      background-color: #f8f9fa;
+      border: 0.1rem solid rgb(163, 163, 163);
+      padding: 0.5rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+    .back-nav {
+      margin-top: 2rem;
+    }
+    @media screen and (max-width: 1200px) {
+      .media-layout {
+        grid-template-columns: 1fr;
+      }
+      section {
+        height: auto !important;
+        margin: 0 2rem !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="desktop-nav">
+    <div class="logo">
+      <img src="assets/logo.png" class="logo-image" alt="Logo">
+      <span class="logo-text">Mark Brown</span>
+    </div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav">
+    <div class="logo">
+      <img src="assets/logo.png" class="logo-image">
+      <span class="logo-text">Mark Brown</span>
+    </div>
+    
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <div class="menu-links">
+        <li><a href="index.html#about" onclick="toggleMenu()">about</a></li>
+        <li><a href="index.html#projects" onclick="toggleMenu()">projects</a></li>
+        <li><a href="index.html#contact" onclick="toggleMenu()">contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <section id="project-two-details" style="height: auto; min-height: 85vh; padding-bottom: 8vh;">
+    <div class="back-nav">
+      <button class="btn btn-color-2" onclick="location.href='index.html#projects'">← Back</button>
+    </div>
+
+    <p class="section__text__p1" style="text-align: left; margin-top: 1.5rem;">Case Study</p>
+    <h1 class="title" style="text-align: left; margin-bottom: 2rem;">AI Chatbot Platform</h1>
+
+    <div class="project-detail-container">
+      
+      <div class="media-layout">
+        <div class="video-wrapper">
+          <video controls preload="metadata" poster="./assets/chatbot.png">
+            <source src="./assets/Chatbot Demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <div class="details-container" style="text-align: left;">
+          <h3>Project Overview</h3>
+          <p style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            This is a custom AI chatbot application built on Node.js, designed to help small businesses deploy an automated chat agent capable of handling customer service interactions directly.
+          </p>
+          <p style="margin-top: 1rem; margin-bottom: 1.5rem;">
+            The application integrates a basic web scraping component that programmatically extracts text data from a business's public web pages or documents to automatically compile its initial knowledge base. The core logic engine then utilizes a Retrieval-Augmented Generation (RAG) framework; when a user asks a question, the system dynamically searches this scraped data to retrieve relevant background context before passing it to the language model. By combining this workflow with efficient asynchronous API handling and clean conversational state management, the chatbot provides highly specific, context-aware answers within defined customer service boundaries while keeping backend resource overhead minimal.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="details-container color-container" style="text-align: left;">
+        <h3 style="margin: 0 0 0.5rem 0;">Tech Stack & Tools</h3>
+        <p>Built with scalability and fluid integration patterns:</p>
+        <div class="tech-badges">
+          <span class="badge">Javascript</span>
+          <span class="badge">Node.js</span>
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">Ollama LLM</span>
+          <span class="badge">JSON</span>
+          <span class="badge">REST API</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <div class="nav-links-container">
+        <ul class="nav-links">
+          <li><a href="index.html#about">about</a></li>
+          <li><a href="index.html#projects">projects</a></li>
+          <li><a href="index.html#contact">contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
